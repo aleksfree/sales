@@ -1,0 +1,82 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 31px 16px;
+  font-family: 'Myriad Pro Regular';
+  text-decoration: none;
+  box-shadow: inset 0 0 0 2px $secondary;
+  transition: $transition;
+  &_solid {
+    background: $secondary;
+    color: $light;
+    font-size: 18px;
+    &:hover {
+      background: transparent;
+      color: $secondary;
+    }
+  }
+  &_right {
+    &::after {
+      @include pseudo(block, static, '\f105');
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      margin-left: 13px;
+      font-size: 14px;
+      margin-bottom: -1px;
+    }
+  }
+}
+
+.menu-open {
+  background: none;
+  display: none;
+  border: none;
+  padding: 0;
+  font-size: 20px;
+  color: $primary;
+  &_big {
+    font-size: 25px;
+  }
+}
+
+.hidden-inteface {
+  display: none;
+  @include media('md') {
+    display: flex;
+  }
+}
+
+.slider-arrows {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.slider-arrow {
+  display: block;
+  padding: 0;
+  width: 45px;
+  height: 45px;
+  background: none;
+  border: none;
+  background: $secondary;
+  color: $light;
+  font-size: 36px;
+  cursor: pointer;
+  &:first-child {
+    margin-right: 10px;
+  }
+  &_disabled {
+    box-shadow: inset 0 0 0 1px $disabled;
+    background: transparent;
+    color: $disabled;
+    cursor: not-allowed;
+  }
+}
+
+.slider-arrow.slick-disabled {
+    box-shadow: inset 0 0 0 1px $disabled;
+    background: transparent;
+    color: $disabled;
+    cursor: not-allowed;
+}

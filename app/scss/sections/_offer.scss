@@ -1,0 +1,131 @@
+.offer {
+  position: relative;
+  padding: 70px 0 126px;
+  @include media('sm') {
+    padding: 70px 0 80px;
+  }
+  &__slider {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 630px;
+    transform: translateX(-46%);
+    @include media('xl') {
+      width: 48%;
+    }
+    @include media('lg') {
+      width: 58%;
+      left: auto;
+      right: 0;
+      transform: translateX(0%);
+    }
+    @include media('md') {
+      right: 30px;
+    }
+    @include media('sm') {
+      display: none;
+    }
+  }
+  &__slide {
+    img {
+      width: 100%;
+    }
+  }
+  &__content {
+    position: relative;
+    padding: 31px 0 40px 3px;
+    max-width: 435px;
+    &::after, &::before {
+      @include pseudo;
+      left: 3px;
+      width: 50px;
+      height: 1px;
+      background: $disabled;
+    }
+    &::after {
+      top: 0;
+    }
+    &::before {
+      bottom: 0;
+    }
+  }
+  &__title {
+    margin: 0 0 29px;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.33;
+    color: $secondary;
+    @include media('xl') {
+      font-size: 30px;
+    }
+    @include media('sm') {
+      font-size: 23px;
+    }
+  }
+  &__inner {
+    position: absolute;
+    width: 180px;
+    bottom: -83px;
+    right: 19.2%;
+    @include media('xl') {
+      right: 12.2%;
+    }
+    @include media('lg') {
+      right: 57%;
+    }
+    @include media('md') {
+      bottom: -112px;
+      right: auto;
+      left: 60px;
+    }
+    @include media('sm') {
+      display: none;
+    }
+    &-item {
+      width: 100%;
+    }
+    &-info {
+      position: relative;
+      font-family: 'Myriad Pro Regular';
+      color: $grey;
+      letter-spacing: 0.02em;
+      &::before {
+        @include pseudo;
+        left: 0;
+        top: -16px;
+        width: 30px;
+        height: 1px;
+        background: $disabled;
+      }
+      &-title {
+        margin: 0 0 8px;
+        font-size: 14px;
+        line-height: 1.29;
+      }
+      &-price {
+        margin: 0;
+        font-family: 'DIN Pro Regular';
+        span {
+          font-size: 24px;
+          color: $primary;
+        }
+      }
+    }
+  }
+  &__slider-arrows {
+    margin-top: 40px;
+    margin-left: 4px;
+    @include media('sm') {
+      display: none;
+    }
+  }
+  &__social {
+    position: absolute;
+    bottom: -82px;
+    right: 15px;
+    @include media('sm') {
+      display: none;
+    }
+  }
+}

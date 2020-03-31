@@ -47,7 +47,7 @@ function reloadBrowser(done) {
 }
 
 function buildHtml(done) {
-  src('app/index.html')
+  src('app/*.html')
     .pipe(htmlreplace({
         'js': 'js/main.min.js',
         'css': 'css/main.min.css'

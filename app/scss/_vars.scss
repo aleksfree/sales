@@ -1,0 +1,20 @@
+/* Colors */
+$primary: #f47920;
+$secondary: #202020;
+$light: #ffffff;
+$text: #989898;
+$grey: #919191;
+$lightgrey: #d0d0d0;
+$disabled: #cccccc;
+
+/* Animations */
+$transition: 0.3s;
+
+/* Media */
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1920px
+);

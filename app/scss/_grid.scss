@@ -1,0 +1,19 @@
+.container {
+  max-width: 1396px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.col-3 {
+  flex-basis: 31.84%;
+}
+
+.col-4 {
+  flex-basis: 23.35%;
+}
