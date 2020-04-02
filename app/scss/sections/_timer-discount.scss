@@ -1,0 +1,92 @@
+.timer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 55px;
+  @include media('xl') {
+    padding: 0 25px;
+  }
+  @include media('md') {
+    padding: 0;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 205px;
+    height: 205px;
+    border: 2px dashed $grey;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 4px $light, inset 0 0 0 9px $primary;
+    background: lighten($grey, 40%);
+    background-clip: content-box;
+    @include media('xl') {
+      width: 170px;
+      height: 170px;
+    }
+    @include media('lg') {
+      width: 120px;
+      height: 120px;
+    }
+    @include media('sm') {
+      width: 21.88vw;
+      height: 21.88vw;
+      box-shadow: inset 0 0 0 2px $light, inset 0 0 0 4px $primary;
+    }
+  }
+  &__dottes{
+    display: none;
+    height: 40px;
+    @include media('md') {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    } @include media('sm') {
+      display: none;
+    }
+    &::after, &::before {
+      content: '';
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: $primary;
+    }
+  }
+  &__separator {
+    img {
+      @include media('md') {
+        display: none;
+      }
+    }
+  }
+  &__name {
+    font-size: 30px;
+    color: $secondary;
+    @include media('xl') {
+      font-size: 24px;
+    }
+    @include media('lg') {
+      font-size: 16px;
+    }
+    @include media('sm') {
+      font-size: 3.75vw;
+    }
+  }
+  &__number {
+    font-family: 'DIN Pro Bold';
+    font-size: 72px;
+    color: $primary;
+    line-height: 1;
+    @include media('xl') {
+      font-size: 58px;
+    }
+    @include media('lg') {
+      font-size: 38px;
+    }
+    @include media('sm') {
+      font-size: 8.12vw;
+    }
+  }
+}

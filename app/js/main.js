@@ -49,4 +49,28 @@ $(function() {
       $(elem).html(html);
     }
   });
+
+  /* Timer */
+
+  function createTimer() {
+    var date = new Date(2020, 3, 10, 0, 0, 0);
+    var now = new Date();
+    var diff = date - now;
+
+    if(diff > 0) {
+      var days = Math.floor(diff / (3600 * 24 * 1000));
+      var hours = Math.floor(diff / (3600 * 1000)) % 24;
+      var min = Math.floor(diff / (60 * 1000)) % 60;
+      var sec = Math.floor(diff / 1000) % 60;
+  
+      $('.timer__days').html((days < 10) ? '0' + days : days);
+      $('.timer__hours').html((hours < 10) ? '0' + hours : hours);
+      $('.timer__min').html((min < 10) ? '0' + min : min);
+      $('.timer__sec').html((sec < 10) ? '0' + sec : sec);
+  
+      setTimeout(createTimer, 1000);
+    }
+  }
+
+  createTimer();
 });

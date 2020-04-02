@@ -6,7 +6,6 @@ body {
   font-family: 'DIN Pro Light', sans-serif;
   font-size: 14px;
   color: $text;
-  padding-bottom: 300px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -191,6 +190,7 @@ a, button, input {
     font-size: 36px;
     color: $secondary;
     padding: 0 63px;
+    text-align: center;
     @include media('md') {
       font-size: 30px;
       padding: 0 35px;
