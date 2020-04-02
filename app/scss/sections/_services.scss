@@ -1,0 +1,52 @@
+.services {
+  padding-bottom: 100px;
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    margin-right: -12px;
+    margin-left: -12px;
+    @include media('xl') {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  &__slide {
+    display: flex!important;
+    justify-content: center;
+    margin: 0 10px;
+  }
+  &__item {
+    display: block;
+    width: 100%;
+    max-width: 319px;
+    text-decoration: none;
+    &:hover {
+      & > .services__title {
+        color: $primary;
+      }
+    }
+  }
+  &__img {
+    position: relative;
+    height: 180px;
+    img {
+      @include coverimg;
+    }
+  }
+  &__title {
+    font-family: 'Myriad Pro Regular';
+    margin: 15px 0 7px;
+    font-size: 18px;
+    color: $secondary;
+    letter-spacing: 0.03em;
+  }
+  &__link {
+    font-size: 14px;
+    color: $text;
+  }
+  &__slider-arrows {
+    display: flex;
+    justify-content: center;
+  }
+}
