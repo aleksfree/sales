@@ -1,0 +1,36 @@
+.categories {
+  &__item {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    padding: 22px 19px 23px 50px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: $secondary;
+    background: lighten($lightgrey, 15%);
+    text-decoration: none;
+    transition: $transition;
+    box-shadow: inset 0 -1px 0 0 lighten($grey, 33%);
+    @include media('lg') {
+      width: 100%;
+      max-width: 319px;
+      margin-bottom: 20px;
+    }
+    &:hover {
+      background: $primary;
+      color: $light;
+      i {
+        color: $light;
+      }
+    }
+  }
+  i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    font-size: 18px;
+    color: $grey;
+    transform: translateY(-50%);
+    transition: $transition;
+  }
+}

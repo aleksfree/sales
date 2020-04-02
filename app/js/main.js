@@ -36,4 +36,17 @@ $(function() {
       $(this).children('.menu__sub').slideToggle();
     }
   });
+
+  $('.card__overlay-btn').click(function(e) {
+    e.preventDefault();
+    $(this).children('i').toggleClass('d-none');
+  });
+
+  $('.card__title').each(function(index, elem) {
+    var html = $(elem).html();
+    if(html.length > 25) {
+      html = html.substr(0, 22) + '...';
+      $(elem).html(html);
+    }
+  });
 });

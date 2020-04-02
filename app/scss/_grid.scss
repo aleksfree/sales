@@ -11,9 +11,22 @@
 }
 
 .col-3 {
-  flex-basis: 31.84%;
+  display: flex;
+  justify-content: center;
+  width: 31.84%;
+  @include media('lg') {
+    width: 100%;
+  }
 }
 
 .col-4 {
-  flex-basis: 23.35%;
+  display: flex;
+  justify-content: center;
+  width: 23.35%;
+  @include media('lg') {
+    width: 50%;
+  }
+  @include media('md') {
+    width: 100%;
+  }
 }

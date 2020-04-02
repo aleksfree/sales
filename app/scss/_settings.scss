@@ -6,6 +6,7 @@ body {
   font-family: 'DIN Pro Light', sans-serif;
   font-size: 14px;
   color: $text;
+  padding-bottom: 300px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -20,6 +21,10 @@ strong {
 
 button {
   cursor: pointer;
+}
+
+a, button {
+  transition: $transition;
 }
 
 a, button, input {
@@ -46,8 +51,16 @@ a, button, input {
   display: none;
 }
 
+.d-flex {
+  display: flex;
+}
+
 .rotate-180 {
   transform: rotate(180deg);
+}
+
+.center {
+  text-align: center;
 }
 
 .logo {
@@ -55,6 +68,9 @@ a, button, input {
   align-items: center;
   color: $secondary;
   text-decoration: none;
+  img {
+    width: 60px;
+  }
   &__text {
     margin: 0 0 0 14px;
     font-size: 12px;
@@ -125,6 +141,221 @@ a, button, input {
       margin-bottom: 22px;
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.section {
+  padding-top: 92px;
+  &-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__line {
+      position: relative;
+      margin-bottom: -8px;
+      flex-grow: 1;
+      height: 1px;
+      background: $secondary;
+      @include media('md') {
+        margin-bottom: 0;
+      }
+      @include media('sm') {
+        display: none;
+      }
+      &::before {
+        @include pseudo;
+        height: 14px;
+        width: 1px;
+        background: darken($lightgrey, 10%);
+        transform: translateY(-50%);
+      }
+      &_left {
+        background: linear-gradient(270deg, darken($lightgrey, 10%), $light);
+        &::before {
+          right: 0;
+        }
+      }
+      &_right {
+        background: linear-gradient(90deg, darken($lightgrey, 10%), $light);
+        &::before {
+          left: 0;
+        }
+      }
+    }
+  }
+  &__title {
+    display: inline-block;
+    margin: 0;
+    font-size: 36px;
+    color: $secondary;
+    padding: 0 63px;
+    @include media('md') {
+      font-size: 30px;
+      padding: 0 35px;
+    }
+    @include media('sm') {
+     padding: 0;
+    }
+  }
+  &__section-heading {
+    margin-bottom: 38px;
+  }
+  &__row {
+    margin-bottom: 38px;
+    @include media('lg') {
+      margin-bottom: 20px;
+    }
+  }
+  &__card {
+    @include media('lg') {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include media('lg') {
+    max-width: 320px;
+  }
+  &__info {
+    padding: 0 20px 30px;
+    @include media('xl') {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    @include media('lg') {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  &__img {
+    position: relative;
+    display: block;
+    height: 320px;
+    @include media('xl') {
+      height: 270px;
+    }
+    @include media('lg') {
+      height: 320px;
+    }
+    img {
+      @include coverimg;
+    }
+  }
+  &__title {
+    margin: 25px 0 7px;
+    font-family: 'DIN Pro Regular';
+    font-size: 18px;
+    color: $secondary;
+    @include media('xl') {
+      font-size: 16px;
+    }
+    @include media('lg') {
+      font-size: 18px;
+    }
+  }
+  &__tag {
+    color: $text;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__rating {
+    width: 100px;
+    margin-top: 18px;
+  }
+  &__price {
+    font-family: 'DIN Pro Regular';
+    font-size: 16px;
+    color: $secondary;
+    span {
+      font-size: 30px;
+      @include media('xl') {
+        font-size: 27px;
+      }
+      @include media('lg') {
+        font-size: 30px;
+      }
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px 20px 15px;
+    border-top: 1px solid $lightgrey;
+    @include media('xl') {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    @include media('lg') {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  &__footer-add {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 24px;
+    &:hover {
+      color: lighten($secondary, 10%);
+    }
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background: rgba($secondary, 0.6);
+    opacity: 0;
+    @include media('lg') {
+      opacity: 1;
+      background: transparent;
+    }
+    &:hover {
+      transition: 0.5s;
+      opacity: 1;
+    }
+    &-inner {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      @include media('lg') {
+        padding: 10px;
+        border-radius: 10px;
+        background: rgba($secondary, 0.6);
+      }
+    }
+    &-btn {
+      position: relative;
+      z-index: 5;
+      border: none;
+      background: none;
+      padding: 0;
+      font-size: 20px;
+      cursor: pointer;
+      &_like {
+        color: $light;
+        margin-bottom: 15px;
+      }
+      &_cart {
+        color: $primary;
+        &:hover {
+          color: darken($primary, 10%);
+        }
       }
     }
   }

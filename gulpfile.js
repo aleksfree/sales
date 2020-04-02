@@ -67,7 +67,7 @@ function buildCss(done) {
   var plugins = [
     postUncss({
       html: ['app/index.html', 'app/card.html', 'app/catalog.html'],
-      ignore: [/\.modal.*/, /\.overlay.*/]
+      ignore: [/\.slick.*/, /\.d-.*/]
     })
   ];
   src(['app/libs/css/*.css', 'app/css/**/*.css'])
@@ -82,7 +82,7 @@ function buildCss(done) {
 }
 
 function  buildJs(done) {
-  src(['app/js/libs/*.js', 'app/js/main.js'])
+  src(['app/libs/js/*.js', 'app/js/main.js'])
     .pipe(concat('main.js'))
     .pipe(minify({
       ext: {
