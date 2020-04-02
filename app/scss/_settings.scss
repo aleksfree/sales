@@ -218,11 +218,29 @@ a, button, input {
 .card {
   position: relative;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  @include media('lg') {
-    max-width: 320px;
+  max-width: 320px;
+  &__sale {
+    position: absolute;
+    top: 15px;
+    left: -10px;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 50px;
+    font-family: 'DIN Pro Regular';
+    font-size: 30px;
+    color: $light;
+    background: $primary;
+    &::after {
+      @include pseudo;
+      left: 0;
+      bottom: -5px;
+      width: 10px;
+      height: 5px;
+      background: url('../img/sale-products/coner.svg') no-repeat center / cover;
+    }
   }
   &__info {
     padding: 0 20px 30px;
@@ -285,11 +303,22 @@ a, button, input {
         font-size: 30px;
       }
     }
+    &-sale {
+      width: 100%;
+      margin-top: 10px;
+      font-family: 'DIN Pro Regular';
+      span {
+        font-size: 18px;
+        color: $grey;
+        text-decoration: line-through;
+      }
+    }
   }
   &__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     padding: 23px 20px 15px;
     border-top: 1px solid $lightgrey;
     @include media('xl') {

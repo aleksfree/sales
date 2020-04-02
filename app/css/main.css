@@ -389,22 +389,40 @@ a:focus, button:focus, input:focus {
 .card {
   position: relative;
   width: 100%;
+  max-width: 320px;
+}
+
+.card__sale {
+  position: absolute;
+  top: 15px;
+  left: -10px;
+  z-index: 6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 70px;
+  height: 50px;
+  font-family: 'DIN Pro Regular';
+  font-size: 30px;
+  color: #ffffff;
+  background: #f47920;
 }
 
-@media screen and (max-width: 991px) {
-  .card {
-    max-width: 320px;
-  }
+.card__sale::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 10px;
+  height: 5px;
+  background: url("../img/sale-products/coner.svg") no-repeat center/cover;
 }
 
 .card__info {
@@ -510,6 +528,18 @@ a:focus, button:focus, input:focus {
   }
 }
 
+.card__price-sale {
+  width: 100%;
+  margin-top: 10px;
+  font-family: 'DIN Pro Regular';
+}
+
+.card__price-sale span {
+  font-size: 18px;
+  color: #919191;
+  text-decoration: line-through;
+}
+
 .card__footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -520,6 +550,8 @@ a:focus, button:focus, input:focus {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   padding: 23px 20px 15px;
   border-top: 1px solid #d0d0d0;
 }
