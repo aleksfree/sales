@@ -73,4 +73,13 @@ $(function() {
   }
 
   createTimer();
+
+  /* Slider banners */
+
+  $('.banners__slider').slick({
+    arrows: false,
+    pauseOnHover: true,
+    autoplay: true,
+    autoplaySpeed: 5000
+  });
 });

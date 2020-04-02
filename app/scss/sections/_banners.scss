@@ -1,0 +1,123 @@
+.banners {
+  &__slide {
+    position: relative;
+    &::before {
+      @include pseudo;
+      display: none;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
+      background: rgba($secondary, 0.5);
+      @include media('md') {
+        display: block;
+      }
+    }
+  }
+}
+
+.banner {
+  position: relative;
+  z-index: 3;
+  height: 470px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include media('xl') {
+    height: 380px;
+  }
+  @include media('sm') {
+    height: 340px;
+  }
+}
+
+.banner-mobile {
+  background: url('../img/banners/banner-1.jpg') no-repeat center / cover;
+  @include media('md') {
+    background-position-x: right 35%;
+  }
+  &__title {
+    margin: 0 0 13px;
+    font-family: 'DIN Pro Bold';
+    font-size: 72px;
+    text-transform: uppercase;
+    color: $light;
+    @include media('xl') {
+      max-width: 650px;
+      font-size: 46px;
+    }
+    @include media('lg') {
+      max-width: 500px;
+      font-size: 38px;
+    }
+    @include media('sm') {
+      max-width: 300px;
+      font-size: 24px;
+    }
+  }
+  &__subtitle {
+    margin-bottom: 40px;
+    font-family: 'DIN Pro Regular';
+    font-size: 30px;
+    color: $light;
+    @include media('sm') {
+      font-size: 22px;
+    }
+  }
+}
+
+.banner-regist {
+  background: url('../img/banners/banner-2.jpg') no-repeat center / cover;
+  &__left {
+    position: relative;
+    max-width: 400px;
+    padding-bottom: 40px;
+    &::after {
+      @include pseudo;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 1px;
+      background: $light;
+    }
+  }
+  &__title {
+    margin: 0 0 38px;
+    font-family: 'DIN Pro Regular';
+    font-size: 36px;
+    text-transform: uppercase;
+    color: $light;
+    line-height: 1.33;
+    @include media('lg') {
+      font-size: 28px;
+      max-width: 330px;
+    }
+  }
+  &__right {
+    position: relative;
+    bottom: -43px;
+    font-family: 'DIN Pro Regular';
+    font-size: 36px;
+    max-width: 340px;
+    padding-top: 30px;
+    text-transform: uppercase;
+    text-align: right;
+    color: $light;
+    line-height: 1.33;
+    @include media('lg') {
+      font-size: 28px;
+    }
+    @include media('sm') {
+      display: none;
+    }
+    &::before {
+      @include pseudo;
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 1px;
+      background: $light;
+    }
+  }
+}
