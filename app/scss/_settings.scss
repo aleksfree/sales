@@ -143,6 +143,14 @@ a, button, input {
       }
     }
   }
+  &_horizontal {
+    .social__link {
+      margin-right: 22px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .section {
