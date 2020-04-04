@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-strong {
+strong, b {
   color: inherit;
   font-family: 'DIN Pro Bold';
   font-weight: normal;
@@ -124,10 +124,10 @@ a, button, input {
 
 .social {
   display: inline-flex;
+  font-size: 12px;
   &__link {
     color: $grey;
     text-decoration: none;
-    font-size: 12px;
     &:hover {
       color: $secondary;
       transition: $transition;
@@ -147,14 +147,20 @@ a, button, input {
     .social__link {
       margin-right: 22px;
       &:last-child {
-        margin-bottom: 0;
+        margin-right: 0;
       }
+    }
+  }
+  &_big {
+    font-size: 16px;
+    .social__link {
+      margin-right: 19px;
     }
   }
 }
 
 .section {
-  padding-top: 92px;
+  padding-top: 90px;
   &-heading {
     display: flex;
     justify-content: center;
@@ -208,10 +214,10 @@ a, button, input {
     }
   }
   &__section-heading {
-    margin-bottom: 38px;
+    margin-bottom: 40px;
   }
   &__row {
-    margin-bottom: 38px;
+    margin-bottom: 40px;
     @include media('lg') {
       margin-bottom: 20px;
     }
@@ -295,7 +301,6 @@ a, button, input {
     }
   }
   &__rating {
-    width: 100px;
     margin-top: 18px;
   }
   &__price {
@@ -394,6 +399,117 @@ a, button, input {
           color: darken($primary, 10%);
         }
       }
+    }
+  }
+}
+
+.pagination {
+  &__link {
+    position: relative;
+    margin-right: 26px;
+    font-size: 16px;
+    color: $secondary;
+    text-decoration: none;
+    &::after {
+      @include pseudo;
+      width: 2px;
+      height: 15px;
+      bottom: 2px;
+      right: -16px;
+      background: $lightgrey;
+    }
+    &:last-child {
+      margin-right: 0;
+      &::after {
+        display: none;
+      }
+    }
+    &_active {
+      color: $grey;
+    }
+    &:hover {
+      color: $grey;
+    }
+  }
+}
+
+.aside {
+  width: 350px;
+  &__title {
+    font-family: 'Din Pro Medium';
+    font-size: 18px;
+    margin: 0 0 10px 30px;
+    color: $secondary;
+    text-transform: uppercase;
+    line-height: 0.5;
+  }
+}
+
+.table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  &-row {
+    &:last-child {
+      .table-cell {
+        border-bottom: none;
+      }
+    }
+  }
+  &-cell {
+    padding: 16px 0;
+    border-bottom: 1px solid lighten($grey, 30%);
+    &:first-child {
+      width: 57.5%;
+    }
+    &:last-child {
+      font-family: 'Din Pro Bold';
+    }
+  }
+}
+
+.view-products {
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    padding: 30px 0 26px;
+    margin-left: 30px;
+    color: $secondary;
+    text-decoration: none;
+    border-bottom: 1px solid $darkgrey;
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+  &__content {
+    padding-left: 30px;
+  }
+  &__title {
+    margin: 0 0 10px;
+    font-family: 'Din Pro Regular';
+    font-size: 16px;
+    line-height: 0.8;
+  }
+  &__subtitle {
+    display: block;
+    margin-bottom: 15px;
+  }
+  &__rating {
+    margin-bottom: 13px;
+  }
+  &__price {
+    font-family: 'Din Pro Regular';
+    font-size: 16px;
+    span {
+      font-size: 24px;
+    }
+  }
+  &__img {
+    position: relative;
+    width: 87px;
+    height: 87px;
+    img {
+      @include coverimg;
     }
   }
 }

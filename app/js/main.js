@@ -114,4 +114,70 @@ $(function() {
       }
     ]
   });
+
+  /* Card slider */
+
+  $('.fotorama').fotorama({
+    width: '100%',
+    height: 548,
+    nav: 'thumbs',
+    navwidth: '100%',
+    thumbwidth: 85,
+    thumbheight: 85,
+    thumbborderwidth: 1,
+    fit: 'scaledown',
+    thumbfit: 'scaledown',
+    thumbmargin: 30.5
+  });
+
+  /* Tabs product-card */
+
+  tabs();
+
+  $('.card-product__delivery-top > input[type=radio]').change(tabs);
+
+  function tabs() {
+    var tab = $('.card-product__delivery-top > input[type=radio]:checked').attr('data-tab');
+
+    $('.tab').each(function(index, elem) {
+      if($(elem).hasClass(tab)) {
+        $(elem).removeClass('d-none');
+      }
+      else {
+        $(elem).addClass('d-none');
+      }
+    });
+  }
+});
+
+/* Likes slider */
+
+/* Slider services */
+
+$('.likes__list').slick({
+  appendArrows: '.likes__slider-arrows',
+  prevArrow: '.likes__slider-arrow_prev',
+  nextArrow: '.likes__slider-arrow_next',
+  slidesToShow: 4,
+  infinite: false,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 1,
+      }
+    }
+  ]
 });

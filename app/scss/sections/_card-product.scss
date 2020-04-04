@@ -1,0 +1,215 @@
+.card-product {
+  padding-top: 45px;
+  padding-bottom: 94px;
+  &__pagination {
+    margin-bottom: 60px;
+  }
+  &__inner {
+    display: flex;
+  }
+  &__img {
+    width: 100%;
+    max-width: 550px;
+  }
+  &__content {
+    flex-grow: 1;
+    padding-left: 32px;
+    color: $secondary;
+  }
+  &__heading {
+    padding-bottom: 27px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $darkgrey;
+    &-title {
+      margin: 0;
+      font-family: 'DIN Pro Bold';
+      font-size: 24px;
+      line-height: 0.7;
+    }
+    &-rating {
+      display: flex;
+      align-items: flex-end;
+    }
+    &-counter {
+      margin-right: 18px;
+      font-size: 14px;
+      color: $grey;
+    }
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 0 35px;
+    border-bottom: 1px dashed $darkgrey;
+    &-number {
+      font-family: 'DIN Pro Bold';
+      font-size: 24px;
+      margin-bottom: 12px;
+      span {
+        font-size: 48px;
+      }
+    }
+    &-counter {
+      font-size: 16px;
+      font-family: 'DIN Pro Regular';
+      color: $text;
+      span {
+        font-family: 'DIN Pro Bold';
+        color: $secondary;
+      }
+    }
+    &-mobile {
+      display: block;
+    }
+  }
+  &__colors {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    font-family: 'DIN Pro Regular';
+    font-size: 14px;
+    border-bottom: 1px dashed $darkgrey;
+    &-title {
+      font-size: 16px;
+      margin: 0 33px 0 0;
+    }
+    &-list {
+      display: flex;
+      input[type=radio] {
+        display: none;
+        &:checked + .card-product__colors-item {
+          border-color: $primary;
+        }
+      }
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+      padding-right: 20px;
+      font-size: 14px;
+      border: 1px solid $darkgrey;
+      cursor: pointer;
+    }
+    &-icon {
+      width: 26px;
+      height: 26px;
+      margin: 1px 20px 1px 1px;
+    }
+  }
+  &__delivery {
+    padding: 26px 0 0;
+    border-bottom: 1px dashed $darkgrey;
+    &-title {
+      margin: 0 0 28px;
+      font-family: 'DIN Pro Regular';
+      font-size: 16px;
+    }
+    &-top {
+      display: flex;
+      &-item {
+        padding-right: 28px;
+        padding-bottom: 21px;
+        border-right: 1px solid $darkgrey;
+        border-bottom: 1px solid $darkgrey;
+        font-size: 16px;
+        &:last-child {
+          padding-right: 0;
+          padding-left: 30px;
+          border-right: 0;
+          flex-grow: 1;
+        }
+      }
+      input[type=radio] {
+        display: none;
+      }
+      input[type=radio]:checked + .card-product__delivery-top-item {
+        border-bottom-color: transparent;
+      }
+      input[type=radio]:checked + .radio-label .radio__icon {
+        display: block;
+      }
+    }
+    &-bottom {
+      padding: 25px 0 30px 30px;
+      &-title {
+        margin: 0 0 18px;
+        font-family: 'DIN Pro Regular';
+        font-size: 16px;
+      }
+      &-list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        input[type=radio] {
+          display: none;
+        }
+        input[type=radio]:checked + .card-product__delivery-bottom-item {
+          border-color: $primary;
+        }
+        input[type=radio]:checked + .radio-label .radio__icon {
+          display: block;
+        }
+      }
+      &-item {
+        padding: 4px 10px 4px 4px;
+        border: 1px solid $darkgrey;
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &__actions {
+    padding: 30px 0;
+    border-bottom: 1px dashed $darkgrey;
+    &-list {
+      display: flex;
+      align-items: center;
+    }
+    &-link {
+      &:first-child {
+        margin-right: 20px;
+      }
+      &:last-child {
+        margin-left: auto;
+      }
+    }
+  }
+  &__footer {
+    padding-top: 26px;
+    font-family: 'DIN Pro Regular';
+    display: flex;
+    justify-content: space-between;
+    &-counters {
+      display: flex;
+    }
+    &-item {
+      &:first-child {
+        margin-right: 30px;
+      }
+    }
+    &-social {
+      margin-left: 17px;
+    }
+  }
+  &__rating {
+    width: 100px;
+  }
+}
+
+.fotorama__stage {
+  border: 1px solid $darkgrey;
+}
+
+.fotorama__thumb-border {
+  border-color: $primary;
+  background: none;
+}
+
+.fotorama__thumb {
+  background: $light;
+  border: 1px solid $darkgrey;
+}

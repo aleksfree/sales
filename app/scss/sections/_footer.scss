@@ -17,7 +17,9 @@
       align-items: center;
     }
     &-item {
-      margin-bottom: 60px;
+      @include media('xl') {
+        margin-bottom: 60px;
+      }
     }
   }
   &__title {

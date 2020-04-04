@@ -67,7 +67,7 @@ function buildCss(done) {
   var plugins = [
     postUncss({
       html: ['app/index.html', 'app/card.html', 'app/catalog.html'],
-      ignore: [/\.slick.*/, /\.d-.*/]
+      ignore: [/\.slick.*/, /\.d-.*/, /\.fotorama.*/]
     })
   ];
   src(['app/libs/css/*.css', 'app/css/**/*.css'])
@@ -82,7 +82,7 @@ function buildCss(done) {
 }
 
 function  buildJs(done) {
-  src(['app/libs/js/*.js', 'app/js/main.js'])
+  src(['app/libs/js/jquery-3.4.1.min.js', 'app/libs/js/fotorama.js', 'app/libs/js/slick.min.js', 'app/js/main.js'])
     .pipe(concat('main.js'))
     .pipe(minify({
       ext: {

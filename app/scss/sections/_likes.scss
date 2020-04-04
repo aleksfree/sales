@@ -1,0 +1,26 @@
+.likes {
+  &__list {
+    margin-bottom: 43px;
+    margin-right: -12px;
+    margin-left: -12px;
+    @include media('xl') {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    @include media('md') {
+      width: 90%;
+      margin: 0 auto 43px;
+    }
+    @include media('sm') {
+      max-width: 340px;
+      margin: 0 auto 43px;
+    }
+  }
+  &__item {
+    width: 320px;
+    margin: 0 15px;
+    @include media('sm') {
+      margin: 0 10px;
+    }
+  }
+}

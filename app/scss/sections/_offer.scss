@@ -1,6 +1,6 @@
 .offer {
   position: relative;
-  padding: 70px 0 126px;
+  padding: 70px 0 130px;
   @include media('sm') {
     padding: 70px 0 80px;
   }
@@ -10,6 +10,9 @@
     left: 50%;
     width: 630px;
     transform: translateX(-46%);
+    @include media('xxl') {
+      left: 56%;
+    }
     @include media('xl') {
       width: 48%;
     }
@@ -68,8 +71,11 @@
     width: 180px;
     bottom: -83px;
     right: 19.2%;
+    @include media('xxl') {
+      right: 10%;
+    }
     @include media('xl') {
-      right: 12.2%;
+      right: 8%;
     }
     @include media('lg') {
       right: 57%;

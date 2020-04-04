@@ -9,6 +9,9 @@
   @include media('md') {
     padding: 0;
   }
+  &-discount {
+    padding-top: 100px;
+  }
   &__item {
     display: flex;
     flex-direction: column;

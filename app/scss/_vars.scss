@@ -2,8 +2,10 @@
 $primary: #f47920;
 $secondary: #202020;
 $light: #ffffff;
+$lighten: #f5f5f5;
 $text: #989898;
 $grey: #919191;
+$darkgrey: #d7d7d7;
 $lightgrey: #d0d0d0;
 $disabled: #cccccc;
 
@@ -16,5 +18,5 @@ $breakpoints: (
   "md": 768px,
   "lg": 992px,
   "xl": 1200px,
-  "xxl": 1920px
+  "xxl": 1366px
 );

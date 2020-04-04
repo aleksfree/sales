@@ -1,0 +1,31 @@
+.product-info {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__left {
+    flex-grow: 1;
+    font-family: 'Din Pro Regular';
+    font-size: 18px;
+    color: $secondary;
+    &-content {
+      padding: 21px 37px;
+      background: $lighten;
+    }
+  }
+  &__specifications {
+    width: 100%;
+  }
+  &__heading {
+    display: flex;
+    &-link {
+      display: block;
+      padding: 16px 43px;
+      color: $secondary;
+      text-decoration: none;
+      &_active {
+        background: $lighten;
+      }
+    }
+  }
+}
