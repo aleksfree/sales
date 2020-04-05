@@ -70,7 +70,14 @@ function buildCss(done) {
       ignore: [/\.slick.*/, /\.d-.*/, /\.fotorama.*/]
     })
   ];
-  src(['app/libs/css/*.css', 'app/css/**/*.css'])
+  src([
+    'app/libs/css/normalize.css',
+    'app/libs/css/fontawesome.css',
+    'app/libs/css/fotorama.css',
+    'app/libs/css/slick.css',
+    'app/libs/css/animate.css',
+    'app/css/**/*.css'
+  ])
   .pipe(concat('main.css'))
   .pipe(postcss(plugins))
   .pipe(cleanCSS({

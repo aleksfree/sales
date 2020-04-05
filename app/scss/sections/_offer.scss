@@ -71,6 +71,14 @@
     width: 180px;
     bottom: -83px;
     right: 19.2%;
+    &::before {
+      @include pseudo;
+      left: 0;
+      top: -16px;
+      width: 30px;
+      height: 1px;
+      background: $disabled;
+    }
     @include media('xxl') {
       right: 10%;
     }
@@ -96,14 +104,6 @@
       font-family: 'Myriad Pro Regular';
       color: $grey;
       letter-spacing: 0.02em;
-      &::before {
-        @include pseudo;
-        left: 0;
-        top: -16px;
-        width: 30px;
-        height: 1px;
-        background: $disabled;
-      }
       &-title {
         margin: 0 0 8px;
         font-size: 14px;

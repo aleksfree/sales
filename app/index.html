@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="libs/css/normalize.css">
   <link rel="stylesheet" href="libs/css/fontawesome.css">
   <link rel="stylesheet" href="libs/css/slick.css">
+  <link rel="stylesheet" href="libs/css/animate.css">
   <link rel="stylesheet" href="css/main.css">
   <!-- endbuild -->
 </head>
@@ -42,7 +43,7 @@
               </div>
             </div>
             <div class="login header__login">
-              <a href="#" class="login__link">Вход на сайт</a><i class="fas fa-lock"></i>
+              <a href="#" data="regist" class="login__link">Вход на сайт</a><i class="fas fa-lock"></i>
             </div>
           </div>
           <!-- /.header-top__inner -->
@@ -96,13 +97,13 @@
                 <a href="#" class="menu__link">Каталоги</a>
                 <div class="menu__sub">
                   <div class="menu__sub-item">
-                    <a href="#" class="menu__sub-link">Оптовый каталог</a>
+                    <a href="catalog.html" class="menu__sub-link">Оптовый каталог</a>
                   </div>
                   <div class="menu__sub-item">
-                    <a href="#" class="menu__sub-link">Розничный каталог</a>
+                    <a href="catalog.html" class="menu__sub-link">Розничный каталог</a>
                   </div>
                   <div class="menu__sub-item">
-                    <a href="#" class="menu__sub-link">Народный базар</a>
+                    <a href="catalog.html" class="menu__sub-link">Народный базар</a>
                   </div>
                 </div>
               </div>
@@ -1043,6 +1044,45 @@
     <!-- /.footer__copy -->
   </footer>
   <!-- /.footer -->
+  <div class="overlay fadeIn"></div>
+  <!-- /.overlay -->
+  <div class="modal modal-regist fadeIn">
+    <div class="modal-close">
+      <i class="far fa-times-circle"></i>
+    </div>
+    <h4 class="modal__title">Регистрация</h4>
+    <form action="#" class="form">
+      <div class="form__input">
+        <input class="input" type="text" name="name" placeholder="Имя:">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="form__input">
+        <input class="input" type="email" name="email" placeholder="Email:">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div class="form__input">
+        <input class="input" type="tel" name="tel" placeholder="Телефон:">
+        <i class="fas fa-phone"></i>
+      </div>
+      <div class="form__input">
+        <input class="input" type="password" name="password" placeholder="Пароль:">
+        <i class="fas fa-lock"></i>
+      </div>
+      <div class="form__checkbox">
+        <input type="checkbox" name="polyci" class="d-none" id="polyci-regist">
+        <label for="polyci-regist" class="label-polyci">
+          <div class="checkbox">
+            <i class="fas fa-check checkbox__icon"></i>
+          </div>
+          Даю согласие на обработку данных
+        </label>
+      </div>
+      <div class="center">
+        <button type="submit" class="btn btn_solid form__btn">Регистрация</button>
+      </div>
+    </form>
+  </div>
+  <!-- /.modal -->
   <!-- build:js -->
   <script src="libs/js/jquery-3.4.1.min.js"></script>
   <script src="libs/js/slick.min.js"></script>

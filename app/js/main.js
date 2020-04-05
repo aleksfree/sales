@@ -194,3 +194,37 @@ $('.product-info__heading-link').click(function(e) {
     $(this).parent().slideToggle();
   }
 });
+
+$('.dropdown__toggle').click(function() {
+  $(this).next().slideToggle();
+});
+
+$('.dropdown__item').click(function() {
+  var html = $(this).html();
+  $(this).parents('.dropdown__wrapper').children('.dropdown__toggle').html(html);
+  $(this).parents('.dropdown__list').slideToggle();
+});
+
+$('[data=regist]').click(function(e) {
+  e.preventDefault();
+  openModal();
+});
+
+$('.modal-close, .overlay').click(function() {
+  closeModal();
+});
+
+function openModal() {
+  $('.overlay').addClass('overlay_visible animated');
+  $('.modal-regist').addClass('modal_visible animated');
+}
+
+function closeModal() {
+  $('.overlay').removeClass('overlay_visible animated');
+  $('.modal-regist').removeClass('modal_visible animated');
+}
+
+$('.catalog__menu-open').click(function() {
+  $('.catalog__aside-list').slideToggle();
+  $(this).children('i').toggleClass('d-none');
+});

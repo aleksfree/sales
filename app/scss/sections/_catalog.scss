@@ -1,0 +1,170 @@
+.catalog {
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 44px;
+    @include media('md') {
+      flex-direction: column;
+    }
+    &-right {
+      display: flex;
+      justify-content: space-between;
+      @include media('md') {
+        align-self: center;
+      }
+      @include media('sm') {
+        flex-direction: column;
+        align-self: flex-start;
+      }
+    }
+    &-dropdown {
+      &:first-child {
+        margin-right: 30px;
+        @include media('sm') {
+          margin-right: 0;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  &__pagination {
+    @include media('md') {
+      margin-bottom: 30px;
+    }
+  }
+  &__inner {
+    display: flex;
+    padding-top: 15px;
+    @include media('lg') {
+      flex-direction: column;
+    }
+    @include media('md') {
+      padding-top: 35px;
+    }
+  }
+  &__aside {
+    width: 350px;
+    padding-right: 30px;
+    flex-shrink: 0;
+    @include media('lg') {
+      width: 100%;
+      padding-right: 0;
+    }
+    &-title {
+      margin: 0 0 20px;
+      font-size: 24px;
+      color: $secondary;
+    }
+    &-menu {
+      padding: 30px 0 9px;
+      border-top: 1px solid $darkgrey;
+      border-bottom: 1px solid $darkgrey;
+      @include media('lg') {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 30px 0;
+      }
+    }
+    &-buttons {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 25px;
+      @include media('lg') {
+        width: 50%;
+        margin-bottom: 0;
+        flex-direction: row;
+      }
+      @include media('md') {
+        width: 80%;
+      }
+      @include media('sm') {
+        width: 60%;
+        flex-direction: column;
+      }
+    }
+    &-btn {
+      @include media('lg') {
+        flex-grow: 1;
+      }
+      &:first-child {
+        margin-bottom: 10px;
+        @include media('lg') {
+          margin-bottom: 0;
+          margin-right: 15px;
+        }
+        @include media('sm') {
+          margin-bottom: 15px;
+          margin-right: 0;
+        }
+      }
+    }
+    &-list {
+      display: flex;
+      flex-direction: column;
+      @include media('lg') {
+        display: none;
+        margin-top: 50px;
+        width: 100%;
+      }
+    }
+    &-link {
+      display: block;
+      font-family: 'DIN Pro Medium';
+      font-size: 16px;
+      margin-bottom: 17.6px;
+      color: $secondary;
+      text-decoration: none;
+      &_active {
+        color: $grey;
+      }
+      &:hover {
+        color: $primary;
+        text-decoration: underline;
+      }
+    }
+  }
+  &__item {
+    width: 31.84%;
+    display: flex;
+    justify-content: center;
+    @include media('xl') {
+      width: 45%;
+    }
+    @include media('lg') {
+      width: 31.84%;
+    }
+    @include media('md') {
+      width: 50%;
+    }
+    @include media('sm') {
+      width: 100%;
+    }
+  }
+  &__card {
+    margin-bottom: 61px;
+  }
+  &__right {
+    padding-top: 48px;
+    flex-grow: 1;
+  }
+  &__info {
+    margin-top: -22px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 16px;
+    color: $grey;
+    @include media('md') {
+      font-size: 14px;
+    }
+  }
+  &__menu-open {
+    display: none;
+    font-size: 30px;
+    @include media('lg') {
+      display: block;
+    }
+  }
+}
