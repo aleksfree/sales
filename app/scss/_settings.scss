@@ -404,9 +404,14 @@ a, button, input {
 }
 
 .pagination {
+  display: inline-flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
   &__link {
+    display: block;
+    margin-bottom: 5px;
     position: relative;
-    margin-right: 26px;
+    margin-right: 30px;
     font-size: 16px;
     color: $secondary;
     text-decoration: none;
@@ -435,6 +440,9 @@ a, button, input {
 
 .aside {
   width: 350px;
+  @include media('xl') {
+    width: auto;
+  }
   &__title {
     font-family: 'Din Pro Medium';
     font-size: 18px;
@@ -442,6 +450,9 @@ a, button, input {
     color: $secondary;
     text-transform: uppercase;
     line-height: 0.5;
+    @include media('xl') {
+      margin-left: 0;
+    }
   }
 }
 
@@ -468,6 +479,16 @@ a, button, input {
 }
 
 .view-products {
+  &__list {
+    @include media('xl') {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    @include media('md') {
+      justify-content: center;
+    }
+  }
   &__item {
     display: flex;
     align-items: flex-start;
@@ -476,6 +497,11 @@ a, button, input {
     color: $secondary;
     text-decoration: none;
     border-bottom: 1px solid $darkgrey;
+    @include media('xl') {
+      width: 300px;
+      border: none;
+      margin-left: 0;
+    }
     &:last-child {
       border-bottom: none;
       padding-bottom: 0;

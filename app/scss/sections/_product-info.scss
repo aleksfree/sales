@@ -2,27 +2,77 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+    @include media('xl') {
+      flex-direction: column;
+    }
   }
   &__left {
     flex-grow: 1;
     font-family: 'Din Pro Regular';
     font-size: 18px;
     color: $secondary;
+    @include media('xl') {
+      margin-bottom: 50px;
+    }
+    @include media('sm') {
+      font-size: 12px;
+    }
     &-content {
       padding: 21px 37px;
       background: $lighten;
+      @include media('md') {
+        padding: 10px 15px;
+      }
     }
   }
   &__specifications {
     width: 100%;
   }
   &__heading {
-    display: flex;
+    position: relative;
+    &-list {
+      display: flex;
+      @include media('md') {
+        display: none;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: translateY(100%);
+        flex-direction: column;
+        background: $lighten;
+      }
+    }
+    &-toggle {
+      position: relative;
+      display: none;
+      background: $lighten;
+      padding: 16px 30px 16px 17px;
+      &::after {
+        @include pseudo(inline-block, absolute, '\f107');
+        right: 10px;
+        top: 50%;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 14px;
+        transform: translateY(-30%);
+      }
+      cursor: pointer;
+      @include media('md') {
+        display: inline-block;
+      }
+    }
     &-link {
       display: block;
-      padding: 16px 43px;
+      padding: 16px 42px;
       color: $secondary;
       text-decoration: none;
+      @include media('md') {
+        padding: 16px 30px 16px 17px;
+        box-shadow: 0 5px 5px rgba($secondary, 0.2);
+      }
+      &:hover {
+        background: darken($lighten, 20%);
+      }
       &_active {
         background: $lighten;
       }

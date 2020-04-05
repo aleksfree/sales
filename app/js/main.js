@@ -119,7 +119,7 @@ $(function() {
 
   $('.fotorama').fotorama({
     width: '100%',
-    height: 548,
+    ratio: 1,
     nav: 'thumbs',
     navwidth: '100%',
     thumbwidth: 85,
@@ -180,4 +180,17 @@ $('.likes__list').slick({
       }
     }
   ]
+});
+
+$('.product-info__heading-toggle').click(function() {
+  $('.product-info__heading-list').slideToggle();
+});
+
+$('.product-info__heading-link').click(function(e) {
+  e.preventDefault();
+  if(window.matchMedia('(max-width: 768px)').matches){
+    var html = $(this).html();
+    $('.product-info__heading-toggle').html(html);
+    $(this).parent().slideToggle();
+  }
 });

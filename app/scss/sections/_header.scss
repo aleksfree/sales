@@ -363,6 +363,7 @@
     width: 200px;
     background: $light;
     transform: translateY(99%);
+    box-shadow: 0 0 15px rgba($secondary, 0.2);
     @include media('md') {
       position: static;
       padding: 0;
@@ -371,6 +372,7 @@
       opacity: 1;
       display: none;
       transform: translateY(0%);
+      box-shadow: none;
     }
     &-item {
       margin-bottom: 20px;
