@@ -1,5 +1,22 @@
 $(function() {
 
+  /* Scroll top */
+
+  $(window).scroll(function () {
+    if($(this).scrollTop() > 700) {
+      $('.top-btn').fadeIn();
+    } 
+    else {
+      $('.top-btn').fadeOut();
+    } 
+  });
+
+  $('.top-btn').click(function () {
+    $('body, html').animate({
+      scrollTop: 0
+    }, 1000);
+  });
+
   /* Slider in offer */
   $('.offer__inner').slick({
     appendArrows: '.offer__slider-arrows',
@@ -32,7 +49,7 @@ $(function() {
   });
 
   $('.menu__item').click(function() {
-    if(window.matchMedia('(max-width: 767px)').matches) {
+    if(window.matchMedia('(max-width: 991px)').matches) {
       $(this).children('.menu__sub').slideToggle();
     }
   });
@@ -148,11 +165,8 @@ $(function() {
       }
     });
   }
-});
 
-/* Likes slider */
-
-/* Slider services */
+  /* Slider services */
 
 $('.likes__list').slick({
   appendArrows: '.likes__slider-arrows',
@@ -182,18 +196,38 @@ $('.likes__list').slick({
   ]
 });
 
+/* Tabs product info */
+
 $('.product-info__heading-toggle').click(function() {
   $('.product-info__heading-list').slideToggle();
 });
 
+var tabs = $('.product-info__tab');
+
 $('.product-info__heading-link').click(function(e) {
   e.preventDefault();
+  var tab = $(this).attr('data-attr');
+
+  $('.product-info__heading-link').removeClass('product-info__heading-link_active');
+
+  $(this).addClass('product-info__heading-link_active');
+
+  tabs.each(function(index, elem) {
+    $(elem).removeClass('product-info__tab_active');
+  });
+  tabs.each(function(index, elem) {
+    if($(elem).hasClass(tab)) {
+      $(elem).addClass('product-info__tab_active');
+    }
+  });
   if(window.matchMedia('(max-width: 768px)').matches){
     var html = $(this).html();
     $('.product-info__heading-toggle').html(html);
     $(this).parent().slideToggle();
   }
 });
+
+/* Dropdown */
 
 $('.dropdown__toggle').click(function() {
   $(this).next().slideToggle();
@@ -205,26 +239,126 @@ $('.dropdown__item').click(function() {
   $(this).parents('.dropdown__list').slideToggle();
 });
 
-$('[data=regist]').click(function(e) {
+/* Modal window */
+
+var modalBtn = $('[data-attr=regist]');
+var closeBtn = $('.modal-close');
+var overlay = $('.overlay');
+
+function modalOpen(className) {
+  $('.' + className).addClass('modal_visible');
+  overlay.addClass('overlay_visible');
+}
+
+function modalClose(className) {
+  $('.' + className).removeClass('modal_visible');
+  overlay.removeClass('overlay_visible');
+}
+
+modalBtn.click(function(e) {
   e.preventDefault();
-  openModal();
+  modalOpen('modal-regist');
 });
 
-$('.modal-close, .overlay').click(function() {
-  closeModal();
+closeBtn.click(function() {
+  closeBtn.parents('.modal').removeClass('modal_visible');
+  overlay.removeClass('overlay_visible');
 });
 
-function openModal() {
-  $('.overlay').addClass('overlay_visible animated');
-  $('.modal-regist').addClass('modal_visible animated');
-}
+overlay.click(function() {
+  modalClose('modal');
+});
 
-function closeModal() {
-  $('.overlay').removeClass('overlay_visible animated');
-  $('.modal-regist').removeClass('modal_visible animated');
-}
+$(document).keydown(function(e) {
+  if(e.which === 27) {
+    modalClose('modal');
+  }
+});
+
+/* Burger catalog */
 
 $('.catalog__menu-open').click(function() {
   $('.catalog__aside-list').slideToggle();
   $(this).children('i').toggleClass('d-none');
+});
+
+/* Mask */
+
+$('input[type=tel]').focus(function() {
+  $(this).mask('+7 (000) 000-00-00', {placeholder: '+7 (___) ___-__-__'});
+});
+
+/* Validate */
+
+$('#regist-form').validate({
+  errorClass: 'invalid',
+  errorElement: 'div',
+  errorPlacement: function(error, element) {
+    error.prependTo(element.parent());
+  },      
+  rules: {
+    name: {
+      required: true,
+      minlength: 2,
+      maxlength: 15
+    },
+    tel: {
+      required: true,
+      minlength: 18
+    },
+    email: {
+      required: true,
+      email: true
+    },
+    password: {
+      required: true,
+      minlength: 5
+    },
+    polyci: {
+      required: true
+    }
+  },
+  messages: {
+    name: {
+      required: 'Это обязательное поле',
+      minlength: 'Минимальная длина 2 символа',
+      maxlength: 'Максимальная длина 15 символов'
+    },
+    tel: {
+      required: 'Это обязательное поле',
+      minlength: 'Введите номер плностью'
+    },
+    email: {
+      required: 'Это обязательное поле',
+      email: 'Некорректный email'
+    },
+    password: {
+      required: 'Это обязательное поле',
+      minlength: 'Минимальная длина 5 символов'
+    },
+    polyci: {
+      required: 'Дайте согласие на обработку данных'
+    }
+  },
+  submitHandler: function(form) {
+    $.ajax({
+      type: 'POST',
+      url: 'send.php',
+      data: $(form).serialize(),
+      success: function() {
+        modalClose('modal-regist');
+        ym(61659232,'reachGoal','sendRegistForm');
+      },
+      complete: function() {
+        $(form)[0].reset();
+        modalOpen('modal-alert');
+      }
+    });
+  }
+});
+
+  $('.header-top__link, .btn, .button-decorate__link, .categories__item, .rating__link, .services__item, .card__tag, .social__link, .google-play, .app-store, .footer__nav-link, .footer__copy-link, .pagination__link, .catalog__aside-link, .pagination-numeric__item, .header-bottom__favourite, .header-bottom__cart, .view-products__item, .table-cell a').click(function(e) {
+    e.preventDefault();
+  });
+
 });

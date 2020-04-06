@@ -71,11 +71,22 @@
         box-shadow: 0 5px 5px rgba($secondary, 0.2);
       }
       &:hover {
-        background: darken($lighten, 20%);
+        background: $lighten;
+        @include media('lg') {
+          background: none;
+        }
       }
       &_active {
         background: $lighten;
       }
     }
   }
+  &__tab {
+    display: none;
+  }
+}
+
+/* uncss:ignore */
+.product-info__tab_active {
+  display: block;
 }

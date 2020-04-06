@@ -67,7 +67,6 @@
         background: $secondary;
         border-bottom: 1px solid $light;
         &:hover {
-          background: lighten($secondary, 10%);
           transition: $transition;
         }
       }
@@ -182,6 +181,7 @@
         height: 70px;
         flex-direction: row;
         border-radius: 50%;
+        box-shadow: 0 0 5px rgba($secondary, 0.2);
       }
       span {
         font-size: 16px;
@@ -260,7 +260,7 @@
       margin-right: 0;
       padding-bottom: 0;
       border-bottom: 1px solid $light;
-      &:hover {
+      &:focus {
         transition: $transition;
         background: darken($primary, 10%);
       }
@@ -283,11 +283,17 @@
     &:hover {
       & > .menu__link {
         color: $primary;
+        @include media('lg') {
+          color: $secondary;
+        }
         @include media('md') {
           color: $light;
         }
       }
       &::before {
+        @include media('lg') {
+          width: 0;
+        }
         width: 100%;
       }
       &::after {
@@ -310,6 +316,21 @@
         color: $primary;
         @include media('md') {
          color: $light;
+        }
+      }
+      &:hover {
+        .menu__link {
+          @include media('lg') {
+            color: $primary;
+          }
+          @include media('md') {
+            color: $light;
+          }
+        }
+        &::before {
+          @include media('lg') {
+            width: 100%;
+          }
         }
       }
       &::before {
@@ -364,13 +385,15 @@
     background: $light;
     transform: translateY(99%);
     box-shadow: 0 0 15px rgba($secondary, 0.2);
+    @include media('lg') {
+      display: none;
+      visibility: visible;
+      opacity: 1;
+    }
     @include media('md') {
       position: static;
       padding: 0;
       width: 100%;
-      visibility: visible;
-      opacity: 1;
-      display: none;
       transform: translateY(0%);
       box-shadow: none;
     }
@@ -394,10 +417,11 @@
       }
       &:hover {
         color: $primary;
+        @include media('lg') {
+          color: $secondary;
+        }
         @include media('md') {
-          background: $primary;
           color: $light;
-          transition: $transition;
         }
       }
     }
@@ -413,6 +437,9 @@
   transition: $transition;
   &:hover {
     color: darken($primary, 10%);
+    @include media('lg') {
+      color: $primary;
+    }
   }
   &-form {
     display: flex;

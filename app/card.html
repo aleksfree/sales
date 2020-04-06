@@ -2,8 +2,19 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Рюкзак PUMA</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
   <!-- build:css -->
   <link rel="stylesheet" href="libs/css/normalize.css">
   <link rel="stylesheet" href="libs/css/fontawesome.css">
@@ -43,7 +54,7 @@
             </div>
           </div>
           <div class="login header__login">
-            <a href="#" data="modal" class="login__link">Вход на сайт</a><i class="fas fa-lock"></i>
+            <button data-attr="regist" class="login__link">Вход на сайт</button><i class="fas fa-lock"></i>
           </div>
         </div>
         <!-- /.header-top__inner -->
@@ -91,10 +102,10 @@
           <!-- /.logo -->
           <nav class="menu header-bottom__menu">
             <div class="menu__item">
-              <a href="#" class="menu__link">Объявления</a>
+              <a href="catalog.html" class="menu__link">Объявления</a>
             </div>
             <div class="menu__item menu__item_active menu__item_toggle">
-              <a href="#" class="menu__link">Каталоги</a>
+              <a href="catalog.html" class="menu__link">Каталоги</a>
               <div class="menu__sub">
                 <div class="menu__sub-item">
                   <a href="catalog.html" class="menu__sub-link">Оптовый каталог</a>
@@ -108,16 +119,16 @@
               </div>
             </div>
             <div class="menu__item">
-              <a href="#" class="menu__link">Участники</a>
+              <a href="catalog.html" class="menu__link">Участники</a>
             </div>
             <div class="menu__item">
-              <a href="#" class="menu__link">Партнеры</a>
+              <a href="catalog.html" class="menu__link">Партнеры</a>
             </div>
             <div class="menu__item">
-              <a href="#" class="menu__link">О платформе</a>
+              <a href="catalog.html" class="menu__link">О платформе</a>
             </div>
             <div class="menu__item">
-              <a href="#" class="menu__link">Новости</a>
+              <a href="catalog.html" class="menu__link">Новости</a>
             </div>
             <button class="search header-bottom__search" title="Поиск">
               <i class="fas fa-search"></i>
@@ -126,11 +137,11 @@
           <!-- /.menu -->
           <!-- /.search -->
           <div class="header-bottom__info">
-            <a href="#" class="header-bottom__favourite" alt="Избранное">
+            <a href="#" class="header-bottom__favourite" title="Избранное">
               <i class="far fa-heart"></i>
               <span>2</span>
             </a>
-            <a href="#" class="header-bottom__cart" alt="Корзина">
+            <a href="#" class="header-bottom__cart" title="Корзина">
               <i class="fas fa-shopping-bag"></i>
               <span>0</span>
             </a>
@@ -211,22 +222,22 @@
             <div class="card-product__colors-list">
               <input type="radio" name="color" value="green" id="color-green" checked>
               <label class="card-product__colors-item" for="color-green">
-                <div class="card-product__colors-icon" style="background-color: #86c255;"></div>
+                <span class="card-product__colors-icon" style="background-color: #86c255;"></span>
                 Зелёный
               </label>
               <input type="radio" name="color" value="yellow" id="color-yellow">
               <label class="card-product__colors-item" for="color-yellow">
-                <div class="card-product__colors-icon" style="background-color: #e9eb5b;"></div>
+                <span class="card-product__colors-icon" style="background-color: #e9eb5b;"></span>
                 Жёлтый
               </label>
               <input type="radio" name="color" value="red" id="color-red">
               <label class="card-product__colors-item" for="color-red">
-                <div class="card-product__colors-icon" style="background-color: #e84b4b;"></div>
+                <span class="card-product__colors-icon" style="background-color: #e84b4b;"></span>
                 Красный
               </label>
               <input type="radio" name="color" value="blue" id="color-blue">
               <label class="card-product__colors-item" for="color-blue">
-                <div class="card-product__colors-icon" style="background-color: #4b91e8;"></div>
+                <span class="card-product__colors-icon" style="background-color: #4b91e8;"></span>
                 Синий
               </label>
             </div>
@@ -237,16 +248,16 @@
             <div class="card-product__delivery-top">
               <input type="radio" name="delivery" id="pickup" checked data-tab="tab1">
               <label for="pickup" class="radio-label card-product__delivery-top-item">
-                <div class="radio radio-label__btn">
-                  <div class="radio__icon"></div>
-                </div>
+                <span class="radio radio-label__btn">
+                  <span class="radio__icon"></span>
+                </span>
                 Самовывоз
               </label>
               <input type="radio" name="delivery" id="delivery" data-tab="tab2">
               <label for="delivery" class="radio-label card-product__delivery-top-item">
-                <div class="radio radio-label__btn">
-                  <div class="radio__icon"></div>
-                </div>
+                <span class="radio radio-label__btn">
+                  <span class="radio__icon"></span>
+                </span>
                 Доставка
               </label>
             </div>
@@ -257,16 +268,16 @@
                 <div class="card-product__delivery-bottom-list">
                   <input type="radio" name="pickup-points" id="pickup-1" checked>
                   <label for="pickup-1" class="radio-label card-product__delivery-bottom-item">
-                    <div class="radio radio-label__btn">
-                      <div class="radio__icon"></div>
-                    </div>
+                    <span class="radio radio-label__btn">
+                      <span class="radio__icon"></span>
+                    </span>
                     Мангеликель 17 ЖК Коркем (Мангеликель 17)
                   </label>
                   <input type="radio" name="pickup-points" id="pickup-2">
                   <label for="pickup-2" class="radio-label card-product__delivery-bottom-item">
-                    <div class="radio radio-label__btn">
-                      <div class="radio__icon"></div>
-                    </div>
+                    <span class="radio radio-label__btn">
+                      <span class="radio__icon"></span>
+                    </span>
                     Шоурум № 1 2018 (Абая 8 Торговый дом Алтын)
                   </label>
                 </div>
@@ -276,9 +287,9 @@
                 <div class="card-product__delivery-bottom-list">
                   <input type="radio" name="delivery-options" id="option-1" checked>
                   <label for="option-1" class="radio-label card-product__delivery-bottom-item">
-                    <div class="radio radio-label__btn">
-                      <div class="radio__icon"></div>
-                    </div>
+                    <span class="radio radio-label__btn">
+                      <span class="radio__icon"></span>
+                    </span>
                     Доставка почтой
                   </label>
                 </div>
@@ -339,49 +350,90 @@
     <!-- /.container -->
   </section>
   <!-- /.card-product -->
-  <section class="product-info">
+  <div class="product-info">
     <div class="container">
       <div class="product-info__inner">
         <div class="product-info__left">
           <div class="product-info__heading">
             <div class="product-info__heading-toggle">Характеристики товара</div>
             <div class="product-info__heading-list">
-              <a href="#" class="product-info__heading-link product-info__heading-link_active">Характеристики товара</a>
-              <a href="#" class="product-info__heading-link">Продавец</a>
-              <a href="#" class="product-info__heading-link">Товар на других сайтах</a>
+              <a href="#" data-attr="tab1" class="product-info__heading-link product-info__heading-link_active">Характеристики товара</a>
+              <a href="#" data-attr="tab2" class="product-info__heading-link">Продавец</a>
+              <a href="#" data-attr="tab3" class="product-info__heading-link">Товар на других сайтах</a>
             </div>
           </div>
           <div class="product-info__left-content">
-            <table class="table product-info__specifications">
-              <tr class="table-row">
-                <td class="table-cell">ИНТ товара:</td>
-                <td class="table-cell">GCN8C1593</td>
-              </tr>
-              <tr class="table-row">
-                <td class="table-cell">Номер товара:</td>
-                <td class="table-cell">1344</td>
-              </tr>
-              <tr class="table-row">
-                <td class="table-cell">Тип предложения:</td>
-                <td class="table-cell">Розничное</td>
-              </tr>
-              <tr class="table-row">
-                <td class="table-cell">Форма:</td>
-                <td class="table-cell">Обычная продажа</td>
-              </tr>
-              <tr class="table-row">
-                <td class="table-cell">Категория:</td>
-                <td class="table-cell">Рюкзаки</td>
-              </tr>
-              <tr class="table-row">
-                <td class="table-cell">Страна производитель:</td>
-                <td class="table-cell">Китай (CN)</td>
-              </tr>
-              <tr class="table-row">
-                <td class="table-cell">Компания производитель:</td>
-                <td class="table-cell">PUMA</td>
-              </tr>
-            </table>
+            <div class="product-info__tab tab1 product-info__tab_active">
+              <table class="table product-info__specifications">
+                <tr class="table-row">
+                  <td class="table-cell">ИНТ товара:</td>
+                  <td class="table-cell">GCN8C1593</td>
+                </tr>
+                <tr class="table-row">
+                  <td class="table-cell">Номер товара:</td>
+                  <td class="table-cell">1344</td>
+                </tr>
+                <tr class="table-row">
+                  <td class="table-cell">Тип предложения:</td>
+                  <td class="table-cell">Розничное</td>
+                </tr>
+                <tr class="table-row">
+                  <td class="table-cell">Форма:</td>
+                  <td class="table-cell">Обычная продажа</td>
+                </tr>
+                <tr class="table-row">
+                  <td class="table-cell">Категория:</td>
+                  <td class="table-cell">Рюкзаки</td>
+                </tr>
+                <tr class="table-row">
+                  <td class="table-cell">Страна производитель:</td>
+                  <td class="table-cell">Китай (CN)</td>
+                </tr>
+                <tr class="table-row">
+                  <td class="table-cell">Компания производитель:</td>
+                  <td class="table-cell">PUMA</td>
+                </tr>
+              </table>
+            </div>
+            <div class="product-info__tab tab2">
+              <table class="table product-info__specifications">
+                <tr class="table-row">
+                  <td class="table-cell">Продавец</td>
+                  <td class="table-cell">Партнерская сеть продаж BMC Sales</td>
+                </tr>
+                <tr class="table-row">
+                  <td class="table-cell">Email:</td>
+                  <td class="table-cell">
+                    <a href="mailto:bmc-sales@gmail.com">bmc-sales@gmail.com</a>
+                  </td>
+                </tr>
+                <tr class="table-row">
+                  <td class="table-cell">Телефон:</td>
+                  <td class="table-cell">
+                    <a href="tel:+77777888999">+7 (777) 788 89 99</a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="product-info__tab tab3">
+              <table class="table product-info__specifications">
+                <tr class="table-row">
+                  <td class="table-cell">
+                    <a href="#"> mektepforma.cms.kdt.kz</a>
+                  </td>
+                </tr>
+                <tr class="table-row">
+                  <td class="table-cell">
+                    <a href="#">zakup.bmcsales.kz</a>
+                  </td>
+                </tr>
+                <tr class="table-row">
+                  <td class="table-cell">
+                    <a href="#">forma.bmcsales.kz</a>
+                  </td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
         <!-- /.product-info__left -->
@@ -389,7 +441,7 @@
           <h4 class="card-product__aside-title">Недавно просмотренное</h4>
           <div class="view-poroducts">
             <div class="view-products__list">
-              <a href="#" class="view-products__item">
+              <a href="card.html" class="view-products__item">
                 <div class="view-products__img">
                   <img src="img/popular-products/popular-poducts-img-2.jpg" alt="Пуховик артикул: 2801">
                 </div>
@@ -419,7 +471,7 @@
                 </div>
               </a>
               <!-- /.view-products__item -->
-              <a href="#" class="view-products__item">
+              <a href="card.html" class="view-products__item">
                 <div class="view-products__img">
                   <img src="img/popular-products/popular-poducts-img-1.jpg" alt="Блузка модель 111">
                 </div>
@@ -427,7 +479,7 @@
                   <h5 class="view-products__title">Блузка модель 111</h5>
                   <span class="view-products__subtitle">Женская одежда</span>
                   <div class="rating rating_small view-products__rating">
-                    <span href="#" class="rating__link">
+                    <span class="rating__link">
                       <i class="far fa-star"></i>
                     </span>
                     <span class="rating__link">
@@ -449,7 +501,7 @@
                 </div>
               </a>
               <!-- /.view-products__item -->
-              <a href="#" class="view-products__item">
+              <a href="card.html" class="view-products__item">
                 <div class="view-products__img">
                   <img src="img/popular-products/popular-poducts-img-3.jpg" alt="Обувь Т 452">
                 </div>
@@ -488,7 +540,7 @@
       <!-- /.product-info__inner -->
     </div>
     <!-- /.container -->
-  </section>
+  </div>
   <!-- /.product-info -->
   <section class="likes section">
     <div class="container">
@@ -501,16 +553,16 @@
         <div class="card likes__item">
           <div class="card__sale">35%</div>
           <div class="card__img">
-            <a href="#" class="card__overlay">
+            <a href="card.html" class="card__overlay">
               <div class="card__overlay-inner">
-                <button class="card__overlay-btn card__overlay-btn_like">
+                <div class="card__overlay-btn card__overlay-btn_like">
                   <i class="far fa-heart" title="В избранное"></i>
                   <i class="fas fa-heart d-none" title="Из избранного"></i>
-                </button>
-                <button class="card__overlay-btn card__overlay-btn_cart">
+                </div>
+                <div class="card__overlay-btn card__overlay-btn_cart">
                   <i class="fas fa-plus-circle" title="В корзину"></i>
                   <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                </button>
+                </div>
               </div>
             </a>
             <img src="img/sale-products/sale-img-1.jpg" alt="Пальто детское">
@@ -538,10 +590,10 @@
           </div>
           <div class="card__footer">   
             <div class="card__price"><span>8 300.00</span> тг.</div>
-            <button class="card__footer-add">
+            <div class="card__footer-add">
               <i class="fas fa-plus-circle" title="В корзину"></i>
               <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-            </button>
+            </div>
             <div class="card__price-sale"><span>10 500.00</span> тг.</div>
           </div>
         </div>
@@ -549,16 +601,16 @@
         <div class="card likes__item">
           <div class="card__sale">40%</div>
           <div class="card__img">
-            <a href="#" class="card__overlay">
+            <a href="card.html" class="card__overlay">
               <div class="card__overlay-inner">
-                <button class="card__overlay-btn card__overlay-btn_like">
+                <div class="card__overlay-btn card__overlay-btn_like">
                   <i class="far fa-heart" title="В избранное"></i>
                   <i class="fas fa-heart d-none" title="Из избранного"></i>
-                </button>
-                <button class="card__overlay-btn card__overlay-btn_cart">
+                </div>
+                <div class="card__overlay-btn card__overlay-btn_cart">
                   <i class="fas fa-plus-circle" title="В корзину"></i>
                   <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                </button>
+                </div>
               </div>
             </a>
             <img src="img/sale-products/sale-img-2.jpg" alt="Туфли детские 555">
@@ -586,9 +638,9 @@
           </div>
           <div class="card__footer">   
             <div class="card__price"><span>8 900.00</span> тг.</div>
-            <button class="card__footer-add" title="В корзину">
+            <div class="card__footer-add" title="В корзину">
               <i class="fas fa-plus-circle"></i>
-            </button>
+            </div>
             <div class="card__price-sale"><span>13 750.00</span> тг.</div>
           </div>
         </div>
@@ -596,16 +648,16 @@
         <div class="card likes__item">
           <div class="card__sale">25%</div>
           <div class="card__img">
-            <a href="#" class="card__overlay">
+            <a href="card.html" class="card__overlay">
               <div class="card__overlay-inner">
-                <button class="card__overlay-btn card__overlay-btn_like">
+                <div class="card__overlay-btn card__overlay-btn_like">
                   <i class="far fa-heart" title="В избранное"></i>
                   <i class="fas fa-heart d-none" title="Из избранного"></i>
-                </button>
-                <button class="card__overlay-btn card__overlay-btn_cart">
+                </div>
+                <div class="card__overlay-btn card__overlay-btn_cart">
                   <i class="fas fa-plus-circle" title="В корзину"></i>
                   <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                </button>
+                </div>
               </div>
             </a>
             <img src="img/sale-products/sale-img-3.jpg" alt="Сарафан в клетку №2">
@@ -643,16 +695,16 @@
         <div class="card likes__item">
           <div class="card__sale">20%</div>
           <div class="card__img">
-            <a href="#" class="card__overlay">
+            <a href="card.html" class="card__overlay">
               <div class="card__overlay-inner">
-                <button class="card__overlay-btn card__overlay-btn_like">
+                <div class="card__overlay-btn card__overlay-btn_like">
                   <i class="far fa-heart" title="В избранное"></i>
                   <i class="fas fa-heart d-none" title="Из избранного"></i>
-                </button>
-                <button class="card__overlay-btn card__overlay-btn_cart">
+                </div>
+                <div class="card__overlay-btn card__overlay-btn_cart">
                   <i class="fas fa-plus-circle" title="В корзину"></i>
                   <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                </button>
+                </div>
               </div>
             </a>
             <img src="img/sale-products/sale-img-4.jpg" alt="Сарафан в клетку №2">
@@ -690,23 +742,23 @@
         <div class="card likes__item">
           <div class="card__sale">35%</div>
           <div class="card__img">
-            <a href="#" class="card__overlay">
+            <a href="card.html" class="card__overlay">
               <div class="card__overlay-inner">
-                <button class="card__overlay-btn card__overlay-btn_like">
+                <div class="card__overlay-btn card__overlay-btn_like">
                   <i class="far fa-heart" title="В избранное"></i>
                   <i class="fas fa-heart d-none" title="Из избранного"></i>
-                </button>
-                <button class="card__overlay-btn card__overlay-btn_cart">
+                </div>
+                <div class="card__overlay-btn card__overlay-btn_cart">
                   <i class="fas fa-plus-circle" title="В корзину"></i>
                   <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                </button>
+                </div>
               </div>
             </a>
             <img src="img/sale-products/sale-img-1.jpg" alt="Пальто детское">
           </div>
           <div class="card__info">
             <h3 class="card__title">Пальто детское</h3>
-            <a href="#" class="card__tag">Детская одежда</a>
+            <a href="card.html" class="card__tag">Детская одежда</a>
             <div class="rating card__rating">
               <a href="#" class="rating__link">
                 <i class="fas fa-star"></i>
@@ -738,16 +790,16 @@
         <div class="card likes__item">
           <div class="card__sale">40%</div>
           <div class="card__img">
-            <a href="#" class="card__overlay">
+            <a href="card.html" class="card__overlay">
               <div class="card__overlay-inner">
-                <button class="card__overlay-btn card__overlay-btn_like">
+                <div class="card__overlay-btn card__overlay-btn_like">
                   <i class="far fa-heart" title="В избранное"></i>
                   <i class="fas fa-heart d-none" title="Из избранного"></i>
-                </button>
-                <button class="card__overlay-btn card__overlay-btn_cart">
+                </div>
+                <div class="card__overlay-btn card__overlay-btn_cart">
                   <i class="fas fa-plus-circle" title="В корзину"></i>
                   <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                </button>
+                </div>
               </div>
             </a>
             <img src="img/sale-products/sale-img-2.jpg" alt="Туфли детские 555">
@@ -785,16 +837,16 @@
         <div class="card likes__item">
           <div class="card__sale">25%</div>
           <div class="card__img">
-            <a href="#" class="card__overlay">
+            <a href="card.html" class="card__overlay">
               <div class="card__overlay-inner">
-                <button class="card__overlay-btn card__overlay-btn_like">
+                <div class="card__overlay-btn card__overlay-btn_like">
                   <i class="far fa-heart" title="В избранное"></i>
                   <i class="fas fa-heart d-none" title="Из избранного"></i>
-                </button>
-                <button class="card__overlay-btn card__overlay-btn_cart">
+                </div>
+                <div class="card__overlay-btn card__overlay-btn_cart">
                   <i class="fas fa-plus-circle" title="В корзину"></i>
                   <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                </button>
+                </div>
               </div>
             </a>
             <img src="img/sale-products/sale-img-3.jpg" alt="Сарафан в клетку №2">
@@ -832,16 +884,16 @@
         <div class="card likes__item">
           <div class="card__sale">20%</div>
           <div class="card__img">
-            <a href="#" class="card__overlay">
+            <a href="card.html" class="card__overlay">
               <div class="card__overlay-inner">
-                <button class="card__overlay-btn card__overlay-btn_like">
+                <div class="card__overlay-btn card__overlay-btn_like">
                   <i class="far fa-heart" title="В избранное"></i>
                   <i class="fas fa-heart d-none" title="Из избранного"></i>
-                </button>
-                <button class="card__overlay-btn card__overlay-btn_cart">
+                </div>
+                <div class="card__overlay-btn card__overlay-btn_cart">
                   <i class="fas fa-plus-circle" title="В корзину"></i>
                   <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                </button>
+                </div>
               </div>
             </a>
             <img src="img/sale-products/sale-img-4.jpg" alt="Сарафан в клетку №2">
@@ -1091,42 +1143,73 @@
       <i class="far fa-times-circle"></i>
     </div>
     <h4 class="modal__title">Регистрация</h4>
-    <form action="#" class="form">
-      <div class="form__input">
-        <input class="input" type="text" name="name" placeholder="Имя:">
-        <i class="fas fa-user"></i>
+    <form action="#" id="regist-form" class="form modal__form">
+      <div class="modal__form-item">
+        <div class="form__input">
+          <input class="input" type="text" name="name" placeholder="Имя:">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="form__input">
+          <input class="input" type="email" name="email" placeholder="Email:">
+          <i class="fas fa-envelope"></i>
+        </div>
       </div>
-      <div class="form__input">
-        <input class="input" type="email" name="email" placeholder="Email:">
-        <i class="fas fa-envelope"></i>
+      <div class="modal__form-item">
+        <div class="form__input">
+          <input class="input" type="tel" name="tel" placeholder="Телефон:">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div class="form__input">
+          <input class="input" type="password" name="password" placeholder="Пароль:">
+          <i class="fas fa-lock"></i>
+        </div>
       </div>
-      <div class="form__input">
-        <input class="input" type="tel" name="tel" placeholder="Телефон:">
-        <i class="fas fa-phone"></i>
-      </div>
-      <div class="form__input">
-        <input class="input" type="password" name="password" placeholder="Пароль:">
-        <i class="fas fa-lock"></i>
-      </div>
-      <div class="form__checkbox">
-        <input type="checkbox" name="polyci" class="d-none" id="polyci-regist">
-        <label for="polyci-regist" class="label-polyci">
-          <div class="checkbox">
-            <i class="fas fa-check checkbox__icon"></i>
-          </div>
-          Даю согласие на обработку данных
-        </label>
-      </div>
-      <div class="center">
-        <button type="submit" class="btn btn_solid form__btn">Регистрация</button>
+      <div class="modal__form-item">
+        <div class="form__checkbox">
+          <input type="checkbox" name="polyci" id="polyci-regist">
+          <label for="polyci-regist" class="label-polyci">
+            <span class="checkbox">
+              <i class="fas fa-check checkbox__icon"></i>
+            </span>
+            Даю согласие на обработку данных
+          </label>
+        </div>
+        <div class="center">
+          <button type="submit" class="btn btn_solid form__btn">Регистрация</button>
+        </div>
       </div>
     </form>
   </div>
+  <div class="modal modal-alert fadeIn">
+    <div class="modal-close">
+      <i class="far fa-times-circle"></i>
+    </div>
+    <div class="modal-alert__text">Регистрация прошла успешно</div>
+  </div>
   <!-- /.modal -->
+  <div class="top-btn" title="Наверх">
+    <i class="fas fa-angle-up"></i>
+  </div>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(61659232, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/61659232" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
   <!-- build:js -->
   <script src="libs/js/jquery-3.4.1.min.js"></script>
   <script src="libs/js/slick.min.js"></script>
   <script src="libs/js/fotorama.js"></script>
+  <script src="libs/js/jquery.mask.min.js"></script>
+  <script src="libs/js/jquery.validate.min.js"></script>
   <script src="js/main.js"></script>
   <!-- endbuild -->
 </body>

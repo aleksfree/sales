@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'DIN Pro Light', sans-serif;
   font-size: 14px;
@@ -26,7 +30,7 @@ a, button {
   transition: $transition;
 }
 
-a, button, input {
+a, button, input, select, textarea {
   &:focus {
     outline: none;
   }
@@ -91,11 +95,17 @@ a, button, input {
     font-family: 'DIN Pro Regular', sans-serif;
     text-decoration: none;
     color: $secondary;
+    background: none;
+    border: none;
+    padding: 0;
     transition: $transition;
     & + i {
       font-size: 12px;
       color: $lightgrey;
       transition: $transition;
+      @include media('lg') {
+        color: $secondary;
+      }
     }
     &:hover {
       & + i {
@@ -131,6 +141,9 @@ a, button, input {
     &:hover {
       color: $secondary;
       transition: $transition;
+      @include media('lg') {
+        color: $grey;
+      }
     }
   }
   &_vertical {
@@ -349,7 +362,10 @@ a, button, input {
     padding: 0;
     font-size: 24px;
     &:hover {
-      color: lighten($secondary, 10%);
+      color: lighten($secondary, 30%);
+      @include media('lg') {
+        color: $secondary;
+      }
     }
   }
   &__overlay {
@@ -397,6 +413,9 @@ a, button, input {
         color: $primary;
         &:hover {
           color: darken($primary, 10%);
+          @include media('lg') {
+            color: $primary;
+          }
         }
       }
     }
@@ -432,8 +451,11 @@ a, button, input {
     &_active {
       color: $grey;
     }
-    &:hover {
+    &:hover:not(.pagination__link_active) {
       color: $grey;
+      @include media('lg') {
+        color: $secondary;
+      }
     }
   }
 }
@@ -451,11 +473,17 @@ a, button, input {
   &-cell {
     padding: 16px 0;
     border-bottom: 1px solid lighten($grey, 30%);
+    a {
+      color: $secondary;
+    }
     &:first-child {
       width: 57.5%;
     }
     &:last-child {
       font-family: 'Din Pro Bold';
+    }
+    &:only-child {
+      text-align: center;
     }
   }
 }
@@ -544,14 +572,32 @@ a, button, input {
   right: 0;
   bottom: 0;
   display: none;
-  padding: 20px;
   margin: auto;
-  width: 300px;
-  height: 450px;
   background: $light;
   color: $secondary;
   z-index: 101;
   animation-duration: 0.5s;
+  &-regist {
+    width: 300px;
+    height: 460px;
+    padding: 20px;
+    @media screen and(orientation: landscape) {
+      width: 490px;
+      height: 280px;
+    }
+  }
+  &-alert {
+    width: 100%;
+    max-width: 320px;
+    height: 100px;
+    font-family: 'Din Pro Medium';
+    padding: 40px 20px;
+    &__text {
+      text-align: center;
+      font-size: 18px;
+      color: green;
+    }
+  }
   &-close {
     position: absolute;
     top: 10px;
@@ -568,6 +614,13 @@ a, button, input {
     text-align: center;
     margin: 0 20px;
   }
+  &__form-item {
+    @media screen and(orientation: landscape) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }
 
 .form {
@@ -575,6 +628,11 @@ a, button, input {
     position: relative;
     border: 1px solid $grey;
     margin-top: 30px;
+    @media screen and(orientation: landscape) {
+      &:first-child {
+        margin-right: 15px;
+      }
+    }
     i {
       position: absolute;
       top: 50%;
@@ -583,6 +641,7 @@ a, button, input {
     }
   }
   &__checkbox {
+    position: relative;
     margin-top: 20px;
   }
   &__btn {
@@ -594,6 +653,7 @@ a, button, input {
   width: 100%;
   padding: 10px 30px 10px 10px;
   border: none;
+  font-family: 'Din Pro Regular';
 }
 
 .checkbox {
@@ -606,10 +666,28 @@ a, button, input {
   border: 1px solid $secondary;
   font-size: 12px;
   line-height: 1;
+  flex-shrink: 0;
   cursor: pointer;
   &__icon {
     display: none;
   }
+}
+
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+/* uncss:ignore */
+.invalid {
+  color: tomato;
+  border-color: tomato;
+}
+
+/* uncss:ignore */
+div.invalid {
+  position: absolute;
+  left: 0;
+  bottom: -19px;
 }
 
 .label-polyci {
@@ -617,6 +695,17 @@ a, button, input {
   align-items: center;
 }
 
+@include input-placeholder {
+  opacity: 1;
+  color: $secondary;
+}
+
 input[type=checkbox]:checked + .label-polyci .checkbox__icon {
   display: block;
+}
+
+.slick-slider, .slick-slide {
+  &:focus {
+    outline: none!important;
+  }
 }

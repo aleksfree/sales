@@ -24,6 +24,9 @@
     &:hover {
       & > .services__title {
         color: $primary;
+        @include media('sm') {
+          color: $secondary;
+        }
       }
     }
   }

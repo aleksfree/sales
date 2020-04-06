@@ -2,8 +2,19 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BMC sales | Главная</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
   <!-- build:css -->
   <link rel="stylesheet" href="libs/css/normalize.css">
   <link rel="stylesheet" href="libs/css/fontawesome.css">
@@ -43,7 +54,7 @@
               </div>
             </div>
             <div class="login header__login">
-              <a href="#" data="regist" class="login__link">Вход на сайт</a><i class="fas fa-lock"></i>
+              <button data-attr="regist" class="login__link">Вход на сайт</button><i class="fas fa-lock"></i>
             </div>
           </div>
           <!-- /.header-top__inner -->
@@ -91,10 +102,10 @@
             <!-- /.logo -->
             <nav class="menu header-bottom__menu">
               <div class="menu__item">
-                <a href="#" class="menu__link">Объявления</a>
+                <a href="catalog.html" class="menu__link">Объявления</a>
               </div>
               <div class="menu__item menu__item_active menu__item_toggle">
-                <a href="#" class="menu__link">Каталоги</a>
+                <a href="catalog.html" class="menu__link">Каталоги</a>
                 <div class="menu__sub">
                   <div class="menu__sub-item">
                     <a href="catalog.html" class="menu__sub-link">Оптовый каталог</a>
@@ -108,16 +119,16 @@
                 </div>
               </div>
               <div class="menu__item">
-                <a href="#" class="menu__link">Участники</a>
+                <a href="catalog.html" class="menu__link">Участники</a>
               </div>
               <div class="menu__item">
-                <a href="#" class="menu__link">Партнеры</a>
+                <a href="catalog.html" class="menu__link">Партнеры</a>
               </div>
               <div class="menu__item">
-                <a href="#" class="menu__link">О платформе</a>
+                <a href="catalog.html" class="menu__link">О платформе</a>
               </div>
               <div class="menu__item">
-                <a href="#" class="menu__link">Новости</a>
+                <a href="catalog.html" class="menu__link">Новости</a>
               </div>
               <button class="search header-bottom__search" title="Поиск">
                 <i class="fas fa-search"></i>
@@ -126,11 +137,11 @@
             <!-- /.menu -->
             <!-- /.search -->
             <div class="header-bottom__info">
-              <a href="#" class="header-bottom__favourite" alt="Избранное">
+              <a href="#" class="header-bottom__favourite" title="Избранное">
                 <i class="far fa-heart"></i>
                 <span>2</span>
               </a>
-              <a href="#" class="header-bottom__cart" alt="Корзина">
+              <a href="#" class="header-bottom__cart" title="Корзина">
                 <i class="fas fa-shopping-bag"></i>
                 <span>0</span>
               </a>
@@ -341,16 +352,16 @@
         <div class="col-4">
           <div class="card section__card">
             <div class="card__img">
-              <a href="#" class="card__overlay">
+              <a href="card.html" class="card__overlay">
                 <div class="card__overlay-inner">
-                  <button class="card__overlay-btn card__overlay-btn_like">
+                  <div class="card__overlay-btn card__overlay-btn_like">
                     <i class="far fa-heart" title="В избранное"></i>
                     <i class="fas fa-heart d-none" title="Из избранного"></i>
-                  </button>
-                  <button class="card__overlay-btn card__overlay-btn_cart">
+                  </div>
+                  <div class="card__overlay-btn card__overlay-btn_cart">
                     <i class="fas fa-plus-circle" title="В корзину"></i>
                     <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                  </button>
+                  </div>
                 </div>
               </a>
               <img src="img/popular-products/popular-poducts-img-1.jpg" alt="Блузка модель 111">
@@ -390,16 +401,16 @@
         <div class="col-4">
           <div class="card section__card">
             <div class="card__img">
-              <a href="#" class="card__overlay">
+              <a href="card.html" class="card__overlay">
                 <div class="card__overlay-inner">
-                  <button class="card__overlay-btn card__overlay-btn_like">
+                  <div class="card__overlay-btn card__overlay-btn_like">
                     <i class="far fa-heart" title="В избранное"></i>
                     <i class="fas fa-heart d-none" title="Из избранного"></i>
-                  </button>
-                  <button class="card__overlay-btn card__overlay-btn_cart">
+                  </div>
+                  <div class="card__overlay-btn card__overlay-btn_cart">
                     <i class="fas fa-plus-circle" title="В корзину"></i>
                     <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                  </button>
+                  </div>
                 </div>
               </a>
               <img src="img/popular-products/popular-poducts-img-2.jpg" alt="Пуховик артикул: 2801">
@@ -438,16 +449,16 @@
         <div class="col-4">
           <div class="card section__card">
             <div class="card__img">
-              <a href="#" class="card__overlay">
+              <a href="card.html" class="card__overlay">
                 <div class="card__overlay-inner">
-                  <button class="card__overlay-btn card__overlay-btn_like">
+                  <div class="card__overlay-btn card__overlay-btn_like">
                     <i class="far fa-heart" title="В избранное"></i>
                     <i class="fas fa-heart d-none" title="Из избранного"></i>
-                  </button>
-                  <button class="card__overlay-btn card__overlay-btn_cart">
+                  </div>
+                  <div class="card__overlay-btn card__overlay-btn_cart">
                     <i class="fas fa-plus-circle" title="В корзину"></i>
                     <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                  </button>
+                  </div>
                 </div>
               </a>
               <img src="img/popular-products/popular-poducts-img-3.jpg" alt="Обувь Т 452">
@@ -486,16 +497,16 @@
         <div class="col-4">
           <div class="card section__card">
             <div class="card__img">
-              <a href="/card.html" class="card__overlay">
+              <a href="card.html" class="card__overlay">
                 <div class="card__overlay-inner">
-                  <button class="card__overlay-btn card__overlay-btn_like">
+                  <div class="card__overlay-btn card__overlay-btn_like">
                     <i class="far fa-heart" title="В избранное"></i>
                     <i class="fas fa-heart d-none" title="Из избранного"></i>
-                  </button>
-                  <button class="card__overlay-btn card__overlay-btn_cart">
+                  </div>
+                  <div class="card__overlay-btn card__overlay-btn_cart">
                     <i class="fas fa-plus-circle" title="В корзину"></i>
                     <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                  </button>
+                  </div>
                 </div>
               </a>
               <img src="img/popular-products/popular-poducts-img-4.jpg" alt="Рюкзак PUMA">
@@ -601,16 +612,16 @@
           <div class="card section__card">
             <div class="card__sale">35%</div>
             <div class="card__img">
-              <a href="#" class="card__overlay">
+              <a href="card.html" class="card__overlay">
                 <div class="card__overlay-inner">
-                  <button class="card__overlay-btn card__overlay-btn_like">
+                  <div class="card__overlay-btn card__overlay-btn_like">
                     <i class="far fa-heart" title="В избранное"></i>
                     <i class="fas fa-heart d-none" title="Из избранного"></i>
-                  </button>
-                  <button class="card__overlay-btn card__overlay-btn_cart">
+                  </div>
+                  <div class="card__overlay-btn card__overlay-btn_cart">
                     <i class="fas fa-plus-circle" title="В корзину"></i>
                     <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                  </button>
+                  </div>
                 </div>
               </a>
               <img src="img/sale-products/sale-img-1.jpg" alt="Пальто детское">
@@ -652,16 +663,16 @@
           <div class="card section__card">
             <div class="card__sale">40%</div>
             <div class="card__img">
-              <a href="#" class="card__overlay">
+              <a href="card.html" class="card__overlay">
                 <div class="card__overlay-inner">
-                  <button class="card__overlay-btn card__overlay-btn_like">
+                  <div class="card__overlay-btn card__overlay-btn_like">
                     <i class="far fa-heart" title="В избранное"></i>
                     <i class="fas fa-heart d-none" title="Из избранного"></i>
-                  </button>
-                  <button class="card__overlay-btn card__overlay-btn_cart">
+                  </div>
+                  <div class="card__overlay-btn card__overlay-btn_cart">
                     <i class="fas fa-plus-circle" title="В корзину"></i>
                     <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                  </button>
+                  </div>
                 </div>
               </a>
               <img src="img/sale-products/sale-img-2.jpg" alt="Туфли детские 555">
@@ -702,16 +713,16 @@
           <div class="card section__card">
             <div class="card__sale">25%</div>
             <div class="card__img">
-              <a href="#" class="card__overlay">
+              <a href="card.html" class="card__overlay">
                 <div class="card__overlay-inner">
-                  <button class="card__overlay-btn card__overlay-btn_like">
+                  <div class="card__overlay-btn card__overlay-btn_like">
                     <i class="far fa-heart" title="В избранное"></i>
                     <i class="fas fa-heart d-none" title="Из избранного"></i>
-                  </button>
-                  <button class="card__overlay-btn card__overlay-btn_cart">
+                  </div>
+                  <div class="card__overlay-btn card__overlay-btn_cart">
                     <i class="fas fa-plus-circle" title="В корзину"></i>
                     <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                  </button>
+                  </div>
                 </div>
               </a>
               <img src="img/sale-products/sale-img-3.jpg" alt="Сарафан в клетку №2">
@@ -752,16 +763,16 @@
           <div class="card section__card">
             <div class="card__sale">20%</div>
             <div class="card__img">
-              <a href="#" class="card__overlay">
+              <a href="card.html" class="card__overlay">
                 <div class="card__overlay-inner">
-                  <button class="card__overlay-btn card__overlay-btn_like">
+                  <div class="card__overlay-btn card__overlay-btn_like">
                     <i class="far fa-heart" title="В избранное"></i>
                     <i class="fas fa-heart d-none" title="Из избранного"></i>
-                  </button>
-                  <button class="card__overlay-btn card__overlay-btn_cart">
+                  </div>
+                  <div class="card__overlay-btn card__overlay-btn_cart">
                     <i class="fas fa-plus-circle" title="В корзину"></i>
                     <i class="fas fa-minus-circle d-none" title="Из корзины"></i>
-                  </button>
+                  </div>
                 </div>
               </a>
               <img src="img/sale-products/sale-img-4.jpg" alt="Сарафан в клетку №2">
@@ -808,7 +819,6 @@
         <i class="fas fa-angle-right"></i>
       </button>
     </div>
-    </div>
     <!-- /.container -->
   </section>
   <!-- /.sales-products -->
@@ -835,7 +845,7 @@
           <div class="banner">
             <div class="banner-regist__left">
               <h2 class="banner-regist__title"><strong>Зарегистрируйтесь</strong> на сайте и получите скидку</h2>
-              <a href="#" class="btn btn_solid btn_right">
+              <a href="#" data-attr="regist" class="btn btn_solid btn_right">
                 Регистрация
                 <i class="fas fa-angle-right"></i>
               </a>
@@ -1051,41 +1061,73 @@
       <i class="far fa-times-circle"></i>
     </div>
     <h4 class="modal__title">Регистрация</h4>
-    <form action="#" class="form">
-      <div class="form__input">
-        <input class="input" type="text" name="name" placeholder="Имя:">
-        <i class="fas fa-user"></i>
+    <form action="#" id="regist-form" class="form modal__form">
+      <div class="modal__form-item">
+        <div class="form__input">
+          <input class="input" type="text" name="name" placeholder="Имя:">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="form__input">
+          <input class="input" type="email" name="email" placeholder="Email:">
+          <i class="fas fa-envelope"></i>
+        </div>
       </div>
-      <div class="form__input">
-        <input class="input" type="email" name="email" placeholder="Email:">
-        <i class="fas fa-envelope"></i>
+      <div class="modal__form-item">
+        <div class="form__input">
+          <input class="input" type="tel" name="tel" placeholder="Телефон:">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div class="form__input">
+          <input class="input" type="password" name="password" placeholder="Пароль:">
+          <i class="fas fa-lock"></i>
+        </div>
       </div>
-      <div class="form__input">
-        <input class="input" type="tel" name="tel" placeholder="Телефон:">
-        <i class="fas fa-phone"></i>
-      </div>
-      <div class="form__input">
-        <input class="input" type="password" name="password" placeholder="Пароль:">
-        <i class="fas fa-lock"></i>
-      </div>
-      <div class="form__checkbox">
-        <input type="checkbox" name="polyci" class="d-none" id="polyci-regist">
-        <label for="polyci-regist" class="label-polyci">
-          <div class="checkbox">
-            <i class="fas fa-check checkbox__icon"></i>
-          </div>
-          Даю согласие на обработку данных
-        </label>
-      </div>
-      <div class="center">
-        <button type="submit" class="btn btn_solid form__btn">Регистрация</button>
+      <div class="modal__form-item">
+        <div class="form__checkbox">
+          <input type="checkbox" name="polyci" id="polyci-regist">
+          <label for="polyci-regist" class="label-polyci">
+            <span class="checkbox">
+              <i class="fas fa-check checkbox__icon"></i>
+            </span>
+            Даю согласие на обработку данных
+          </label>
+        </div>
+        <div class="center">
+          <button type="submit" class="btn btn_solid form__btn">Регистрация</button>
+        </div>
       </div>
     </form>
   </div>
+  <div class="modal modal-alert fadeIn">
+    <div class="modal-close">
+      <i class="far fa-times-circle"></i>
+    </div>
+    <div class="modal-alert__text">Регистрация прошла успешно</div>
+  </div>
   <!-- /.modal -->
+  <div class="top-btn" title="Наверх">
+    <i class="fas fa-angle-up"></i>
+  </div>
+  <!-- Yandex.Metrika counter -->
+  <script>
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(61659232, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/61659232" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
   <!-- build:js -->
   <script src="libs/js/jquery-3.4.1.min.js"></script>
   <script src="libs/js/slick.min.js"></script>
+  <script src="libs/js/fotorama.js"></script>
+  <script src="libs/js/jquery.mask.min.js"></script>
+  <script src="libs/js/jquery.validate.min.js"></script>
   <script src="js/main.js"></script>
   <!-- endbuild -->
 </body>
